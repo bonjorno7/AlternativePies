@@ -3,6 +3,7 @@ from . import pies
 
 
 classes = (
+    pies.ShadingPie,
 )
 
 
