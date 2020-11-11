@@ -3,7 +3,6 @@ from . import pies
 
 
 classes = (
-    pies.ExamplePie,
 )
 
 
