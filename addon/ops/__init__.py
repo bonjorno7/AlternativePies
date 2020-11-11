@@ -1,9 +1,7 @@
 import bpy
-from . import example_operator
 
 
 classes = (
-    example_operator.ExampleOperator,
 )
 
 
