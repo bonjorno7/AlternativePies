@@ -1,4 +1,5 @@
 import bpy
+from .. import utils
 
 
 class SnapView(bpy.types.Operator):
@@ -14,5 +15,6 @@ class SnapView(bpy.types.Operator):
 
 
     def execute(self, context):
-        self.report({'INFO'}, 'TODO: Actually implement this feature')
+        axis = utils.view.closest_axis(flip=False)
+        bpy.ops.view3d.view_axis(type=axis)
         return {'FINISHED'}
