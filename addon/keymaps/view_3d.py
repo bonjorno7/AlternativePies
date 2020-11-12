@@ -10,3 +10,6 @@ def register(keyconfig: bpy.types.KeyConfig):
 
     item = keymap.keymap_items.new('wm.call_menu_pie', 'Z', 'PRESS')
     item.properties.name = 'ALTPIES_MT_ShadingPie'
+
+    item = keymap.keymap_items.new('wm.call_menu_pie', 'ACCENT_GRAVE', 'PRESS')
+    item.properties.name = 'ALTPIES_MT_ViewPie'

@@ -28,3 +28,28 @@ class ShadingPie(bpy.types.Menu):
 
         pie.prop(view.overlay, 'show_wireframes', text='Toggle Wireframes', icon='MOD_WIREFRAME')
         pie.prop(view.overlay, 'show_face_orientation', text='Toggle Face Orientation', icon='ORIENTATION_NORMAL')
+
+
+class ViewPie(bpy.types.Menu):
+    bl_idname = 'ALTPIES_MT_ViewPie'
+    bl_label = 'View'
+
+    def draw(self, context):
+        layout = self.layout
+        pie = layout.menu_pie()
+
+        text = 'View Perspective' if context.region_data.view_perspective == 'ORTHO' else 'View Ortho'
+        icon = 'VIEW_PERSPECTIVE' if context.region_data.view_perspective == 'ORTHO' else 'VIEW_ORTHO'
+        pie.operator('view3d.view_persportho', text=text, icon=icon)
+        pie.operator('altpies.snap_view', text='Snap View', icon='ORIENTATION_VIEW')
+
+        pie.operator('view3d.view_all', text='View All', icon='ZOOM_ALL')
+        pie.operator('view3d.localview', text='Local View', icon='ORIENTATION_LOCAL')
+
+        op = pie.operator('wm.call_panel', text='NDOF Settings', icon='PREFERENCES')
+        op.name = 'USERPREF_PT_ndof_settings'
+        op = pie.operator('view3d.view_orbit', text='View Other Side', icon='FILE_REFRESH')
+        op.angle, op.type = 3.14159, 'ORBITRIGHT'
+
+        pie.operator('view3d.view_camera', text='View Camera', icon='CAMERA_DATA')
+        pie.operator('view3d.view_selected', text='View Selected', icon='ZOOM_SELECTED')

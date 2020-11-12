@@ -4,6 +4,7 @@ from . import pies
 
 classes = (
     pies.ShadingPie,
+    pies.ViewPie,
 )
 
 
