@@ -53,10 +53,8 @@ class ViewPie(bpy.types.Menu):
         pie.operator('view3d.view_all', text='View All', icon='ZOOM_ALL')
         pie.operator('view3d.localview', text='Local View', icon='ORIENTATION_LOCAL')
 
-        op = pie.operator('wm.call_panel', text='NDOF Settings', icon='PREFERENCES')
-        op.name = 'USERPREF_PT_ndof_settings'
-        op = pie.operator('view3d.view_orbit', text='View Other Side', icon='FILE_REFRESH')
-        op.angle, op.type = 3.14159, 'ORBITRIGHT'
+        pie.operator('wm.call_panel', text='NDOF Settings', icon='PREFERENCES').name = 'USERPREF_PT_ndof_settings'
+        pie.operator('altpies.flip_view', text='Flip View', icon='FILE_REFRESH')
 
         pie.operator('view3d.view_camera', text='View Camera', icon='CAMERA_DATA')
         pie.operator('view3d.view_selected', text='View Selected', icon='ZOOM_SELECTED')
