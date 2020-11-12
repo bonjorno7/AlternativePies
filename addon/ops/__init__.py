@@ -1,7 +1,9 @@
 import bpy
+from . import snap_view
 
 
 classes = (
+    snap_view.SnapView,
 )
 
 
