@@ -15,16 +15,11 @@ class ShadingPie(bpy.types.Menu):
 
         if context.pose_object:
             pie.prop(view.overlay, 'show_xray_bone', icon='XRAY')
-
-        else:
-            if context.mode == 'EDIT_MESH' or view.shading.type in {'SOLID', 'WIREFRAME'}:
-                sub = pie
-            else:
-                sub = pie.row()
-                sub.active = False
-
+        elif context.mode == 'EDIT_MESH' or view.shading.type in {'SOLID', 'WIREFRAME'}:
             prop = 'show_xray_wireframe' if view.shading.type == 'WIREFRAME' else 'show_xray'
-            sub.prop(view.shading, prop, text='Toggle X-Ray', icon='XRAY',)
+            pie.prop(view.shading, prop, text='Toggle X-Ray', icon='XRAY')
+        else:
+            pie.separator()
 
         pie.prop(view.overlay, 'show_overlays', text='Toggle Overlays', icon='OVERLAY')
 
