@@ -1,9 +1,11 @@
 import bpy
 from . import snap_view
+from . import flip_view
 
 
 classes = (
     snap_view.SnapView,
+    flip_view.FlipView,
 )
 
 
