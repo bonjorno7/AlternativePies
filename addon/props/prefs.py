@@ -1,4 +1,6 @@
 import bpy
+import rna_keymap_ui
+from .. import keymaps
 from .. import utils
 
 
@@ -8,7 +10,12 @@ class AddonPrefs(bpy.types.AddonPreferences):
 
     def draw(self, context):
         layout = self.layout
-        layout.use_property_split = True
-        layout.use_property_decorate = False
 
-        layout.label(text='This area is under construction.')
+        kc = bpy.context.window_manager.keyconfigs.addon
+        km = keymaps.view_3d.keymap
+
+        col = layout.column()
+        col.context_pointer_set('keymap',  km)
+
+        for kmi in km.keymap_items:
+            rna_keymap_ui.draw_kmi([], kc, km, kmi, col, 0)
