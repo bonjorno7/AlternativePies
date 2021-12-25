@@ -53,7 +53,7 @@ class ViewPie(bpy.types.Menu):
         pie.operator('view3d.view_all', text='View All', icon='ZOOM_ALL')
         pie.operator('view3d.localview', text='Local View', icon='ORIENTATION_LOCAL')
 
-        pie.operator('wm.call_panel', text='NDOF Settings', icon='PREFERENCES').name = 'USERPREF_PT_ndof_settings'
+        pie.operator('view3d.navigate', text='Walk / Fly', icon='HIDE_OFF')
         pie.operator('altpies.flip_view', text='Flip View', icon='FILE_REFRESH')
 
         pie.operator('view3d.view_camera', text='View Camera', icon='CAMERA_DATA')
