@@ -2,6 +2,7 @@ import bpy
 
 
 keymap = None
+items = []
 
 
 def register(keyconfig: bpy.types.KeyConfig):
@@ -12,9 +13,11 @@ def register(keyconfig: bpy.types.KeyConfig):
 
         item = keymap.keymap_items.new('wm.call_menu_pie', 'Z', 'PRESS')
         item.properties.name = 'ALTPIES_MT_ShadingPie'
+        items.append(item)
 
         item = keymap.keymap_items.new('wm.call_menu_pie', 'ACCENT_GRAVE', 'PRESS')
         item.properties.name = 'ALTPIES_MT_ViewPie'
+        items.append(item)
 
 
 def unregister(keyconfig: bpy.types.KeyConfig):
@@ -24,3 +27,4 @@ def unregister(keyconfig: bpy.types.KeyConfig):
         keyconfig.keymaps.remove(keymap)
 
         keymap = None
+        items.clear()
