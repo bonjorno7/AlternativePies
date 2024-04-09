@@ -17,7 +17,7 @@ bl_info = {
     'author': 'bonjorno7',
     'description': 'Alternative pie menus to suit my workflow',
     'blender': (2, 80, 0),
-    'version': (1, 0, 0),
+    'version': (1, 0, 1),
     'category': '3D View',
     'location': 'View3D',
 }
