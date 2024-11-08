@@ -24,7 +24,8 @@ def unregister(keyconfig: bpy.types.KeyConfig):
     global keymap
 
     if keymap is not None:
-        keyconfig.keymaps.remove(keymap)
+        for item in items:
+            keymap.keymap_items.remove(item)
 
         keymap = None
         items.clear()
