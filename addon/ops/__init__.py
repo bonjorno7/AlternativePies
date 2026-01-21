@@ -1,11 +1,13 @@
 import bpy
 from . import snap_view
 from . import flip_view
+from . import select_hierarchy
 
 
 classes = (
     snap_view.SnapView,
     flip_view.FlipView,
+    select_hierarchy.SelectHierarchy,
 )
 
 
