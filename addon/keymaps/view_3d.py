@@ -22,6 +22,9 @@ def register(keyconfig: bpy.types.KeyConfig):
         item = keymap.keymap_items.new('altpies.select_hierarchy', 'BUTTON5MOUSE', 'PRESS', any=True)
         items.append(item)
 
+        item = keymap.keymap_items.new('altpies.refresh_libraries', 'F5', 'PRESS')
+        items.append(item)
+
 
 def unregister(keyconfig: bpy.types.KeyConfig):
     global keymap
