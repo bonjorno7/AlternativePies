@@ -22,7 +22,7 @@ class ShadingPie(bpy.types.Menu):
 
         else:
             row = pie.row()
-            row.emboss = 'RADIAL_MENU'
+            row.emboss = 'RADIAL_MENU' if bpy.app.version < (5, 0, 0) else 'PIE_MENU'
             row.scale_x = 1.2
             row.scale_y = 1.5
             row.enabled = False
